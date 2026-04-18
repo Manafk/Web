@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="Novexia - Operational excellence through inventory management, maintenance software, document digitization, AI analytics, system integration, and cybersecurity.">
+    <title>Novexia | Operational Excellence</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: #F9FAFB;
+            color: #1F2937;
+            line-height: 1.5;
+            scroll-behavior: smooth;
+        }
+
+        .navbar {
+            position: sticky;
+            top: 0;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+
+        .nav-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-size: 1.6rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #1E3A8A, #3B82F6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .logo-sub {
+            font-size: 0.75rem;
+            font-weight: 400;
+            color: #6B7280;
+            display: block;
+            letter-spacing: 0.3px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #4B5563;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: #2563EB;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.75rem;
+            border-radius: 2.5rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.25s ease;
+            cursor: pointer;
+            border: none;
+            font-size: 0.9rem;
+        }
+
+        .btn-primary {
+            background: #2563EB;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #1D4ED8;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 1.5px solid white;
+            color: white;
+        }
+
+        .btn-outline:hover {
+            background: white;
+            color: #1E3A8A;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #0F172A 0%, #1E3A8A 50%, #3B82F6 100%);
+            color: white;
+            padding: 5rem 2rem;
+            text-align: center;
+            border-radius: 0 0 3rem 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero-tagline {
+            font-size: 1.2rem;
+            font-weight: 400;
+            opacity: 0.9;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero p {
+            font-size: 1rem;
+            max-width: 650px;
+            margin: 0 auto 2rem auto;
+            opacity: 0.85;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            text-align: center;
+            color: #0F172A;
+        }
+
+        .section-sub {
+            text-align: center;
+            color: #4B5563;
+            max-width: 700px;
+            margin: -0.5rem auto 3rem auto;
+            font-size: 1rem;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            transition: all 0.3s ease;
+            border: 1px solid #E5E7EB;
+        }
+
+        .service-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 20px rgba(0,0,0,0.08);
+        }
+
+        .service-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .service-content {
+            padding: 1.5rem;
+        }
+
+        .service-icon {
+            font-size: 1.8rem;
+            color: #2563EB;
+            margin-bottom: 0.75rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: #0F172A;
+            font-weight: 600;
+        }
+
+        .service-desc {
+            font-size: 0.85rem;
+            color: #6B7280;
+            margin-bottom: 1rem;
+            font-weight: 400;
+        }
+
+        .service-card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .service-card li {
+            margin-bottom: 0.4rem;
+            padding-left: 1.3rem;
+            position: relative;
+            color: #4B5563;
+            font-size: 0.8rem;
+        }
+
+        .service-card li:before {
+            content: "✓";
+            color: #2563EB;
+            font-weight: 600;
+            position: absolute;
+            left: 0;
+        }
+
+        .testimonial-section {
+            background: #F8FAFE;
+            border-radius: 1.5rem;
+            padding: 3rem 2rem;
+            margin: 3rem 0;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .testimonial-card {
+            background: white;
+            border-radius: 1rem;
+            padding: 1.8rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+            border: 1px solid #E5E7EB;
+        }
+
+        .quote-icon {
+            font-size: 2rem;
+            color: #2563EB;
+            opacity: 0.3;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-text {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #374151;
+            margin-bottom: 1.5rem;
+        }
+
+        .client-info {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            border-top: 1px solid #E5E7EB;
+            padding-top: 1.2rem;
+        }
+
+        .client-avatar {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: #2563EB;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+            font-size: 1.2rem;
+        }
+
+        .client-details h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #0F172A;
+        }
+
+        .client-details p {
+            font-size: 0.75rem;
+            color: #6B7280;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            background: white;
+            border-radius: 1.5rem;
+            padding: 2.5rem;
+            margin: 3rem 0;
+            border: 1px solid #E5E7EB;
+        }
+
+        .stats {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .stat {
+            background: #EFF6FF;
+            padding: 1rem;
+            border-radius: 0.75rem;
+            text-align: center;
+            flex: 1;
+        }
+
+        .stat-number {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #2563EB;
+        }
+
+        .stat-label {
+            font-size: 0.75rem;
+            color: #4B5563;
+        }
+
+        .contact-section {
+            background: white;
+            border-radius: 1.5rem;
+            padding: 2.5rem;
+            margin: 3rem 0;
+            border: 1px solid #E5E7EB;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 1px solid #D1D5DB;
+            border-radius: 0.75rem;
+            font-family: inherit;
+            font-size: 0.9rem;
+        }
+
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: #2563EB;
+        }
+
+        .footer {
+            background: #0F172A;
+            color: #94A3B8;
+            padding: 3rem 2rem 2rem;
+            margin-top: 4rem;
+            border-radius: 1.5rem 1.5rem 0 0;
+        }
+
+        .footer-content {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .social-links a {
+            color: #94A3B8;
+            font-size: 1.3rem;
+            margin-right: 1rem;
+            transition: color 0.2s;
+        }
+
+        .social-links a:hover {
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .nav-container { flex-direction: column; gap: 1rem; }
+            .nav-links { gap: 1.2rem; flex-wrap: wrap; justify-content: center; }
+            .about-grid { grid-template-columns: 1fr; }
+            .section-title { font-size: 1.6rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                NOVEXIA
+                <span class="logo-sub">Operational Excellence</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#testimonials">Clients</a></li>
+                <li><a href="#about">Company</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section id="home">
+        <div class="hero">
+            <h1>Novexia</h1>
+            <div class="hero-tagline">Where efficiency meets innovation</div>
+            <p>Inventory management · Maintenance software · Document digitization · AI analytics · System integration · Cybersecurity</p>
+            <div class="hero-buttons">
+                <a href="#contact" class="btn btn-primary">Inquire</a>
+                <a href="#services" class="btn btn-outline">Our services</a>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <h2 id="services" class="section-title">Capabilities</h2>
+        <p class="section-sub">Enterprise solutions for operational reliability</p>
+
+        <div class="services-grid">
+            <div class="service-card">
+                <img class="service-image" src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=600&h=400&fit=crop" alt="Inventory">
+                <div class="service-content">
+                    <div class="service-icon"><i class="fas fa-boxes"></i></div>
+                    <h3>Onsite Inventory Team</h3>
+                    <div class="service-desc">Accuracy, accountability, and operational efficiency</div>
+                    <ul>
+                        <li>Physical audits and cycle counts</li>
+                        <li>Real-time asset and stock tracking</li>
+                        <li>Custom reporting and analytics</li>
+                        <li>Loss prevention and monitoring</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <img class="service-image" src="https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?w=600&h=400&fit=crop" alt="Maintenance">
+                <div class="service-content">
+                    <div class="service-icon"><i class="fas fa-tools"></i></div>
+                    <h3>NextMaint Software</h3>
+                    <div class="service-desc">Proactive maintenance and equipment longevity</div>
+                    <ul>
+                        <li>Preventive and predictive scheduling</li>
+                        <li>Work order tracking and dashboards</li>
+                        <li>Asset health monitoring and alerts</li>
+                        <li>ERP and enterprise integration</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <img class="service-image" src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&h=400&fit=crop" alt="Document">
+                <div class="service-content">
+                    <div class="service-icon"><i class="fas fa-file-alt"></i></div>
+                    <h3>Document Digitization</h3>
+                    <div class="service-desc">Secure, searchable digital records</div>
+                    <ul>
+                        <li>High-quality scanning with OCR</li>
+                        <li>Secure cloud storage and metadata</li>
+                        <li>Regulatory compliance standards</li>
+                        <li>Reduced storage and faster retrieval</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <img class="service-image" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop" alt="Analytics">
+                <div class="service-content">
+                    <div class="service-icon"><i class="fas fa-chart-line"></i></div>
+                    <h3>AI-Powered Analytics</h3>
+                    <div class="service-desc">Intelligent insights from operational data</div>
+                    <ul>
+                        <li>Demand forecasting and anomaly detection</li>
+                        <li>Failure prediction and risk assessment</li>
+                        <li>Interactive business intelligence dashboards</li>
+                        <li>Data-driven decision support</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <img class="service-image" src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600&h=400&fit=crop" alt="Integration">
+                <div class="service-content">
+                    <div class="service-icon"><i class="fas fa-cloud-upload-alt"></i></div>
+                    <h3>Cloud & System Integration</h3>
+                    <div class="service-desc">Seamless connectivity across platforms</div>
+                    <ul>
+                        <li>ERP integration (SAP, Oracle)</li>
+                        <li>Custom API development</li>
+                        <li>Cloud migration (AWS, Azure)</li>
+                        <li>Real-time data synchronization</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <img class="service-image" src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=600&h=400&fit=crop" alt="Security">
+                <div class="service-content">
+                    <div class="service-icon"><i class="fas fa-shield-alt"></i></div>
+                    <h3>Cybersecurity & Data Protection</h3>
+                    <div class="service-desc">Robust security and compliance solutions</div>
+                    <ul>
+                        <li>Network and system security audits</li>
+                        <li>Data encryption and access control</li>
+                        <li>Backup and disaster recovery</li>
+                        <li>Regulatory compliance monitoring</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div id="testimonials" class="testimonial-section">
+            <h2 class="section-title">Client references</h2>
+            <p class="section-sub">Trusted by organizations worldwide</p>
+            
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <div class="quote-icon"><i class="fas fa-quote-right"></i></div>
+                    <div class="testimonial-text">
+                        "Novexia's inventory management reduced discrepancies by 67% within three months. Their team delivered measurable results."
+                    </div>
+                    <div class="client-info">
+                        <div class="client-avatar">SJ</div>
+                        <div class="client-details">
+                            <h4>Sarah Johnson</h4>
+                            <p>Supply Chain Director, LogiCore</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="quote-icon"><i class="fas fa-quote-right"></i></div>
+                    <div class="testimonial-text">
+                        "NextMaint software reduced unplanned downtime by 45%. A significant return on investment within four months."
+                    </div>
+                    <div class="client-info">
+                        <div class="client-avatar">MC</div>
+                        <div class="client-details">
+                            <h4>Michael Chen</h4>
+                            <p>Operations Manager, AeroTech</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="quote-icon"><i class="fas fa-quote-right"></i></div>
+                    <div class="testimonial-text">
+                        "Document digitization saved over 200 hours monthly. The OCR accuracy and metadata indexing are exceptional."
+                    </div>
+                    <div class="client-info">
+                        <div class="client-avatar">ER</div>
+                        <div class="client-details">
+                            <h4>Elena Rodriguez</h4>
+                            <p>Compliance Officer, Global Health</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="about" class="about-grid">
+            <div>
+                <h2 style="font-size: 1.5rem; margin-bottom: 1rem; font-weight: 600;">About Novexia</h2>
+                <p style="margin-bottom: 1rem; color: #374151; font-size: 0.9rem;">Novexia provides enterprise solutions for inventory optimization, maintenance management, document digitization, and data security.</p>
+                <p style="color: #374151; font-size: 0.9rem;">Our approach combines specialized onsite teams, intelligent software platforms, and proven methodologies to deliver operational improvements and cost reductions.</p>
+            </div>
+            <div>
+                <h2 style="font-size: 1.5rem; margin-bottom: 1rem; font-weight: 600;">By the numbers</h2>
+                <div class="stats">
+                    <div class="stat"><div class="stat-number">99.9%</div><div class="stat-label">Uptime SLA</div></div>
+                    <div class="stat"><div class="stat-number">24/7</div><div class="stat-label">Support</div></div>
+                    <div class="stat"><div class="stat-number">50+</div><div class="stat-label">Enterprises</div></div>
+                </div>
+                <ul style="margin-top: 1.5rem; list-style: none;">
+                    <li style="margin-bottom: 0.5rem; font-size: 0.85rem;">✓ Industry-specific solutions</li>
+                    <li style="margin-bottom: 0.5rem; font-size: 0.85rem;">✓ Certified security and compliance</li>
+                    <li style="margin-bottom: 0.5rem; font-size: 0.85rem;">✓ Proven operational ROI</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="contact" class="contact-section">
+            <h2 class="section-title" style="text-align: left; margin-bottom: 0.5rem;">Contact</h2>
+            <p style="margin-bottom: 1.5rem; color: #4B5563; font-size: 0.9rem;">For inquiries, please complete the form below.</p>
+            <form id="contactForm">
+                <div class="form-group">
+                    <input type="text" placeholder="Full name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" placeholder="Email address" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" placeholder="Company">
+                </div>
+                <div class="form-group">
+                    <textarea rows="3" placeholder="Message"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div>
+                <h3 style="color: white; margin-bottom: 0.5rem; font-weight: 600;">Novexia</h3>
+                <p style="font-size: 0.8rem;">Operational Excellence</p>
+                <p style="margin-top: 1rem; font-size: 0.8rem;">📧 contact@novexia.com<br>📞 +1 (555) 678-1234</p>
+            </div>
+            <div>
+                <h4 style="color: white; margin-bottom: 0.5rem; font-size: 0.9rem;">Connect</h4>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+        <div style="text-align: center; margin-top: 2rem; font-size: 0.7rem;">© 2025 Novexia. All rights reserved.</div>
+    </footer>
+
+    <script>
+        document.querySelectorAll('.nav-links a, .hero-buttons a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href && href.startsWith('#')) {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you. A representative will respond within 24 hours.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
